@@ -41,6 +41,7 @@ src/main/java/com/streammastery
 | `exercise03_map`             | `UserNamesExercise`                       | `map`                                   | Extracts user names from user objects.                                    | List of names                                                 |
 | `exercise03_map`             | `UserOrderSummaryExercise`                | `map`, `sum`                            | Creates summary DTOs for active users and their successful order amounts. | `Ali -> 800000`, `Mina -> 700000`                             |
 | `exercise04_grouping`        | `CountOrdersByStatusExercise`             | `groupingBy`, `counting`                | Counts orders by status.                                                  | `SUCCESS -> 5`, `FAILED -> 1`, `PENDING -> 1`                 |
+| `exercise04_grouping`        | `OrdersByUserIdAndStatusExercise`         | `groupingBy`, `counting`                | Counts orders by user ID and then by status.                              | `1 -> SUCCESS -> 2`, `4 -> SUCCESS -> 2`                      |
 | `exercise04_grouping`        | `TotalAmountByStatusExercise`             | `groupingBy`, `summingLong`             | Calculates total amount by order status.                                  | `SUCCESS -> 2500000`, `FAILED -> 200000`, `PENDING -> 300000` |
 | `exercise04_grouping`        | `TotalAmountByUserIdExercise`             | `groupingBy`, `summingLong`, `anyMatch` | Calculates total successful amount for active users.                      | `1 -> 800000`, `4 -> 700000`                                  |
 | `exercise05_flatmap`         | `ActiveCardsExercise`                     | `flatMap`                               | Extracts active cards from active users and filters by balance.           | `1111 -> 500000`, `4444 -> 300000`                            |
@@ -89,6 +90,7 @@ Example classes:
 
 ```text
 CountOrdersByStatusExercise
+OrdersByUserIdAndStatusExercise
 TotalAmountByStatusExercise
 ActiveCardsExercise
 AllowedGroupCodesByMerchantExercise
@@ -112,6 +114,16 @@ PENDING -> 1
 SUCCESS -> 2500000
 FAILED -> 200000
 PENDING -> 300000
+```
+
+### Count orders by user ID and status
+
+```text
+1 -> SUCCESS -> 2
+1 -> FAILED -> 1
+2 -> SUCCESS -> 1
+3 -> PENDING -> 1
+4 -> SUCCESS -> 2
 ```
 
 ### Active cards
